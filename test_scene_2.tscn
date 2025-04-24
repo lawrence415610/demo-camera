@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxejnlilgs2a1"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_8tlwa"]
+[ext_resource type="Texture2D" uid="uid://cqdv1v53qbsfp" path="res://icon.svg" id="2_gw3nc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4k05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xmyx"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Terrian" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Terrian"]
+physics_material_override = SubResource("PhysicsMaterial_g4k05")
+
+[node name="ColorRect" type="ColorRect" parent="Terrian/StaticBody2D"]
+offset_left = -16.0
+offset_top = 472.0
+offset_right = 24.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Terrian/StaticBody2D"]
+offset_left = -16.0
+offset_top = 616.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Terrian/StaticBody2D"]
+offset_left = 1128.0
+offset_top = 480.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Terrian/StaticBody2D"]
+polygon = PackedVector2Array(0, 520, 0, 648, 1152, 648, 1152, 504, 1128, 480, 1128, 624, 24, 616, 24, 472)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(192, 416)
+script = ExtResource("1_8tlwa")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_gw3nc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_8xmyx")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

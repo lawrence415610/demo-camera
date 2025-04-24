@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://cliv48svd4w25"]
+
+[ext_resource type="Script" path="res://test_scene_1.gd" id="1_lh3tk"]
+
+[sub_resource type="Curve2D" id="Curve2D_5efly"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 300, 170, 0, 0, 0, 0, 461, 246, 0, 0, 0, 0, 79, 412, 0, 0, 0, 0, 407, 520, 0, 0, 0, 0, 300, 630)
+}
+point_count = 5
+
+[node name="TestScene1" type="Node2D"]
+script = ExtResource("1_lh3tk")
+
+[node name="Backgound" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Backgound"]
+offset_right = 600.0
+offset_bottom = 200.0
+color = Color(0.109804, 1, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Backgound"]
+offset_top = 200.0
+offset_right = 600.0
+offset_bottom = 400.0
+color = Color(0, 0.837207, 0.83743, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Backgound"]
+offset_top = 400.0
+offset_right = 600.0
+offset_bottom = 600.0
+color = Color(5.39064e-06, 0.642405, 0.64258, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Backgound"]
+offset_top = 600.0
+offset_right = 600.0
+offset_bottom = 800.0
+color = Color(1.68458e-06, 0.460957, 0.461086, 1)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_5efly")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(373.479, 284.033)
+rotation = 2.73166
+progress = 273.47
+loop = false
+
+[node name="Camera2D" type="Camera2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-170, 0)
+rotation = -1.5708
+zoom = Vector2(2, 2)

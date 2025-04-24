@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4lfv573ly4pg"]
+
+[ext_resource type="Texture2D" uid="uid://cqdv1v53qbsfp" path="res://icon.svg" id="1_grt4w"]
+[ext_resource type="Script" path="res://icon.gd" id="2_0qja0"]
+
+[node name="Example" type="Node2D"]
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_grt4w")
+script = ExtResource("2_0qja0")
+
+[node name="Camera2D" type="Camera2D" parent="Icon"]
+limit_left = -100
+
+[node name="Icon2" type="Sprite2D" parent="."]
+position = Vector2(-466, -142)
+texture = ExtResource("1_grt4w")
+
+[node name="Icon3" type="Sprite2D" parent="."]
+position = Vector2(303, 146)
+texture = ExtResource("1_grt4w")
+
+[node name="Icon4" type="Sprite2D" parent="."]
+position = Vector2(-308, 209)
+texture = ExtResource("1_grt4w")
